@@ -13,6 +13,15 @@ const postFields = /* groq */ `
   "author": author->{firstName, lastName, picture},
 `;
 
+const productFields = /* groq */ `
+  _id,
+  "status": select(_originalId in path("drafts.**") => "draft", "published"),
+  "name": name,
+  "slug": slug.current,
+  price,
+  image,
+`;
+
 const linkFields = /* groq */ `
   link {
       ...,
@@ -66,8 +75,26 @@ export const postQuery = defineQuery(`
   }
 `);
 
+export const productQuery = defineQuery(`
+  *[_type == "product" && slug.current == $slug] [0] {
+    content[]{
+    ...,
+    markDefs[]{
+      ...,
+      ${linkFields}
+    }
+  },
+    ${productFields}
+  }
+`);
+
 export const postPagesSlugs = defineQuery(`
   *[_type == "post" && defined(slug.current)]
+  {"slug": slug.current}
+`);
+
+export const productPagesSlugs = defineQuery(`
+  *[_type == "product" && defined(slug.current)]
   {"slug": slug.current}
 `);
 
