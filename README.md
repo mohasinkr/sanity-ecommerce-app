@@ -1,6 +1,7 @@
 # Ecommerce Store made with Next.js + Sanity
 
-## Dev status: In Development
+## Dev status
+Porject actively in development...
 
 ## Resources
 
