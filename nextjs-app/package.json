@@ -11,6 +11,8 @@
     "typegen": "sanity typegen generate"
   },
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.1",
     "@sanity/client": "^6.22.5",
     "@sanity/image-url": "^1.1.0",
     "@sanity/uuid": "^3.0.2",
@@ -20,7 +22,10 @@
     "@types/react-dom": "^18.3.1",
     "@vercel/speed-insights": "^1.1.0",
     "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
+    "lucide-react": "^0.469.0",
     "next": "^15.0.4",
     "next-sanity": "^9.8.18",
     "postcss": "^8.4.49",
@@ -29,7 +34,9 @@
     "sanity": "^3.65.0",
     "sonner": "^1.7.0",
     "styled-components": "^6.1.13",
+    "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.15",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.6.3"
   },
   "devDependencies": {

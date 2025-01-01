@@ -1,15 +1,10 @@
-import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { type PortableTextBlock } from "next-sanity";
 import { Suspense } from "react";
 
-import Avatar from "@/app/components/Avatar";
 import CoverImage from "@/app/components/CoverImage";
 import { MorePosts } from "@/app/components/Posts";
-import PortableText from "@/app/components/PortableText";
 import { sanityFetch } from "@/sanity/lib/live";
-import { postPagesSlugs, postQuery, productPagesSlugs, productQuery } from "@/sanity/lib/queries";
-import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import { productPagesSlugs, productQuery } from "@/sanity/lib/queries";
 
 type Props = {
   params: Promise<{ slug: string }>;

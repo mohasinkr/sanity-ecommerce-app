@@ -30,6 +30,12 @@ export const product = defineType({
       },
     }),
     defineField({
+      name:'brand',
+      title: 'Brand name',
+      type: 'reference',
+      to: [{type: 'brand'}],
+    }),
+    defineField({
       name: 'price',
       title: 'Price',
       type: 'number',
@@ -42,22 +48,9 @@ export const product = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'pageBuilder',
-      title: 'Page builder',
-      type: 'array',
-      of: [{type: 'callToAction'}, {type: 'infoSection'}],
-      options: {
-        insertMenu: {
-          // Configure the "Add Item" menu to display a thumbnail preview of the content type. https://www.sanity.io/docs/array-type#efb1fe03459d
-          views: [
-            {
-              name: 'grid',
-              previewImageUrl: (schemaTypeName) =>
-                `/static/page-builder-thumbnails/${schemaTypeName}.webp`,
-            },
-          ],
-        },
-      },
+      name: 'tax',
+      title: 'Shipping fee & Tax',
+      type: 'number',
     }),
   ],
 })

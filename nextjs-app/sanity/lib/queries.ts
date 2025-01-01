@@ -18,8 +18,17 @@ const productFields = /* groq */ `
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
   "name": name,
   "slug": slug.current,
+  brand,
   price,
   image,
+`;
+
+const brandFields = /* groq */ `
+  _id,
+  "status": select(_originalId in path("drafts.**") => "draft", "published"),
+  "name": name,
+  "slug": slug.current,
+  logo,
 `;
 
 const linkFields = /* groq */ `
@@ -85,6 +94,19 @@ export const productQuery = defineQuery(`
     }
   },
     ${productFields}
+  }
+`);
+
+export const brandQuery = defineQuery(`
+  *[_type == "brand" && slug.current == $slug] [0] {
+    content[]{
+    ...,
+    markDefs[]{
+      ...,
+      ${linkFields}
+    }
+  },
+    ${brandFields}
   }
 `);
 
