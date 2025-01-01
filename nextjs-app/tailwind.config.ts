@@ -140,7 +140,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-lato)"],
+        sans: ["var(--font-lato), sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

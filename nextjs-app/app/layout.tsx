@@ -85,7 +85,7 @@ export default async function RootLayout({
             <Navbar />
           </header>
           <section className="">{children}</section>
-          <Footer />
+          {/* <Footer /> */}
         </main>
         <SpeedInsights />
       </body>

@@ -57,9 +57,11 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navbar() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem className="text-3xl font-medium">SnapCart</NavigationMenuItem>
+    <NavigationMenu className="max-w-none p-5">
+      <NavigationMenuList className="space-x-10">
+        <NavigationMenuItem className="text-3xl font-medium">
+          SnapCart
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -116,24 +118,26 @@ export function Navbar() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Button>
-            <SearchIcon className="h-5 w-5" />
-          </Button>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Button>
-            <Heart className="h-5 w-5" />
-          </Button>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Button>
-            <ShoppingBag className="h-5 w-5" />
-          </Button>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Button>Login</Button>
-        </NavigationMenuItem>
+        <div className="space-x-2 flex">
+          <NavigationMenuItem>
+            <Button variant={"ghost"}>
+              <SearchIcon className="h-5 w-5" />
+            </Button>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Button variant={"ghost"}>
+              <Heart className="h-5 w-5" />
+            </Button>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Button variant={"ghost"}>
+              <ShoppingBag className="h-5 w-5" />
+            </Button>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Button>Login</Button>
+          </NavigationMenuItem>
+        </div>
       </NavigationMenuList>
     </NavigationMenu>
   );
