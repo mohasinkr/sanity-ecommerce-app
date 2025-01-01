@@ -1,5 +1,7 @@
 # Ecommerce Store made with Next.js + Sanity
 
+## Dev status: In Development
+
 ## Resources
 
 - [Sanity documentation](https://www.sanity.io/docs)
