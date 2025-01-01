@@ -14,7 +14,7 @@ import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import { handleError } from "./client-utils";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/Navbar"; 
 
 /**
  * Generate metadata for the page.
@@ -67,7 +67,7 @@ export default async function RootLayout({
   const { isEnabled: isDraftMode } = await draftMode();
 
   return (
-    <html lang="en" className={`${lato.variable} bg-white text-black`}>
+    <html lang="en" className={`${lato.variable} text-black`}>
       <body>
         <main className="min-h-screen">
           {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}

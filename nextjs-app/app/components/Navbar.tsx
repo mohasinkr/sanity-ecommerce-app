@@ -59,7 +59,7 @@ export function Navbar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem className="text-3xl font-medium">MKR STORE</NavigationMenuItem>
+        <NavigationMenuItem className="text-3xl font-medium">SnapCart</NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
