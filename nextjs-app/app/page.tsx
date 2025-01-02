@@ -1,3 +1,9 @@
+import ShopyByCategory from "@/components/homepage/shop-by-category";
+
 export default async function Page() {
-  return <>Hello pumpkin</>;
+  return (
+    <>
+      <ShopyByCategory />
+    </>
+  );
 }

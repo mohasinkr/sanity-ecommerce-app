@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {DesktopIcon} from '@sanity/icons'
+import {DesktopIcon, SchemaIcon} from '@sanity/icons'
 
 /**
  * Page schema.  Define and edit the fields for the 'page' content type.
@@ -30,7 +30,14 @@ export const product = defineType({
       },
     }),
     defineField({
-      name:'brand',
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      icon: SchemaIcon,
+      to: [{type: 'category'}],
+    }),
+    defineField({
+      name: 'brand',
       title: 'Brand name',
       type: 'reference',
       to: [{type: 'brand'}],

@@ -31,6 +31,15 @@ const brandFields = /* groq */ `
   logo,
 `;
 
+const categoryFields = /* groq */ `
+ _id,
+ "status": select(_originalId in path("drafts.**") => "draft", "published"),
+ "name": name,
+ "slug": slug.current,
+ "description": description,
+ "logo": logo,
+`;
+
 const linkFields = /* groq */ `
   link {
       ...,
@@ -62,6 +71,18 @@ export const getPageQuery = defineQuery(`
 export const allPostsQuery = defineQuery(`
   *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) {
     ${postFields}
+  }
+`);
+
+export const allCategoriesQuery = defineQuery(`
+  *[_type == "category" && defined(slug.current)] | order(name asc) {
+    ${categoryFields}
+  }
+`);
+
+export const allProductsQuery = defineQuery(`
+  *[_type == "product" && defined(slug.current)] | order(name asc) {
+    ${productFields}
   }
 `);
 
@@ -107,6 +128,19 @@ export const brandQuery = defineQuery(`
     }
   },
     ${brandFields}
+  }
+`);
+
+export const categoryQuery = defineQuery(`
+  *[_type == "category" && slug.current == $slug] [0] {
+    content[]{
+    ...,
+    markDefs[]{
+      ...,
+      ${linkFields}
+    }
+  },
+    ${categoryFields}
   }
 `);
 
